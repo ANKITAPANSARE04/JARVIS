@@ -35,7 +35,7 @@
         <h1 class="content">Click here to speak</h1>
       </div>
     </section>
-    <script src="app.js"></script>
+
     <script>
       const btn = document.querySelector(".talk");
       const content = document.querySelector(".content");
@@ -62,10 +62,23 @@
         }
       }
 
-      window.addEventListener("load", () => {
+      //   window.addEventListener("load", () => {
+      //     speak("Initializing JARVIS...");
+      //     wishMe();
+      //   });
+      document.addEventListener("DOMContentLoaded", function () {
         speak("Initializing JARVIS...");
         wishMe();
       });
+
+      function speak(message) {
+        console.log(message); // Example implementation
+      }
+
+      function wishMe() {
+        // Your wishMe logic here
+      }
+
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
