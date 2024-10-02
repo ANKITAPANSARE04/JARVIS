@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>JARVIS - Virtual Assistant</title>
-    <link rel="shortcut icon" href="avatar.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-
+    <link rel="shortcut icon" href="#" />
     <title>Document</title>
   </head>
   <body>
     <section class="main">
       <div class="image-container">
         <div class="image">
-          <video width="320" height="240" autoplay>
+          <video width="320" height="240" autoplay class="myVideo">
             <source src="./bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -39,6 +38,7 @@
     <script>
       const btn = document.querySelector(".talk");
       const content = document.querySelector(".content");
+
       function speak(text) {
         const text_speak = new SpeechSynthesisUtterance(text);
 
@@ -62,22 +62,11 @@
         }
       }
 
-      //   window.addEventListener("load", () => {
-      //     speak("Initializing JARVIS...");
-      //     wishMe();
-      //   });
-      document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("load", () => {
+        speak("hi");
         speak("Initializing JARVIS...");
         wishMe();
       });
-
-      function speak(message) {
-        console.log(message); // Example implementation
-      }
-
-      function wishMe() {
-        // Your wishMe logic here
-      }
 
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
